@@ -3,9 +3,9 @@ import axios from "axios";
 
 const Movie = props => {
   const [movie, setMovie] = useState([]);
-  const id = props.match.params.id;
 
   useEffect(() => {
+    const id = props.match.params.id;
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => {
@@ -22,7 +22,7 @@ const Movie = props => {
   //   addToSavedList(movie)
   // }
 
-  if (movie.length == 0) {
+  if (movie.length === 0) {
     console.log("movie is zero");
     return <div>Loading movie information...</div>;
   }
